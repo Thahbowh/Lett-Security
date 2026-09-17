@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/ui/button";
+import { Button } from "@/components/ui/button";
 import { Reveal } from "./Reveal";
 import { sendRegistration } from "@/lib/sendRegistration"; // CHANGED: new import
 
