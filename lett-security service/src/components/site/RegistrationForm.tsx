@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/ui/button";
 import { Reveal } from "./Reveal";
 import { sendRegistration } from "@/lib/sendRegistration"; // CHANGED: new import
 
@@ -104,7 +104,7 @@ export function RegistrationForm() {
       <form
         onSubmit={handleSubmit}
         noValidate
-        className="mx-auto flex w-full max-w-xl flex-col gap-5 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
+        className="mx-auto flex w-full min-w-0 max-w-xl flex-col gap-5 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8"
       >
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
@@ -121,7 +121,7 @@ export function RegistrationForm() {
               onChange={updateField("name")}
               aria-invalid={Boolean(errors.name)}
               aria-describedby={errors.name ? "reg-name-error" : undefined}
-              className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
             />
             {errors.name && (
               <p id="reg-name-error" className="text-xs text-destructive">
@@ -144,7 +144,7 @@ export function RegistrationForm() {
               onChange={updateField("email")}
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? "reg-email-error" : undefined}
-              className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
             />
             {errors.email && (
               <p id="reg-email-error" className="text-xs text-destructive">
@@ -167,7 +167,7 @@ export function RegistrationForm() {
               onChange={updateField("phone")}
               aria-invalid={Boolean(errors.phone)}
               aria-describedby={errors.phone ? "reg-phone-error" : undefined}
-              className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
             />
             {errors.phone && (
               <p id="reg-phone-error" className="text-xs text-destructive">
@@ -187,7 +187,7 @@ export function RegistrationForm() {
               onChange={updateField("service")}
               aria-invalid={Boolean(errors.service)}
               aria-describedby={errors.service ? "reg-service-error" : undefined}
-              className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
             >
               <option value="" disabled>
                 Select a service
@@ -219,7 +219,7 @@ export function RegistrationForm() {
             onChange={updateField("message")}
             aria-invalid={Boolean(errors.message)}
             aria-describedby={errors.message ? "reg-message-error" : undefined}
-            className="resize-none rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+            className="w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
           />
           {errors.message && (
             <p id="reg-message-error" className="text-xs text-destructive">
